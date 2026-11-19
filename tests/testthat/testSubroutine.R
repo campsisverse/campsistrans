@@ -62,14 +62,7 @@ generateModel2 <- function(advan, trans) {
 # Import test utils
 source(file.path(testFolder, "testUtils.R"))
 
-getTestName <- function(name, engines = c("Pharmpy", "nonmem2rx")) {
-  if (skipPharmpyTests()) {
-    engines <- engines[engines != "Pharmpy"]
-  }
-  return(paste0(name, " (", paste0(engines, collapse = "/"), ")"))
-}
-
-test_that(getTestName("ADVAN1 TRANS1"), {
+test_that("ADVAN1 TRANS1 can be successfully imported", {
   advan <- 1
   trans <- 1
 
@@ -87,7 +80,7 @@ test_that(getTestName("ADVAN1 TRANS1"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN1 TRANS2"), {
+test_that("ADVAN1 TRANS2 can be successfully imported", {
   advan <- 1
   trans <- 2
 
@@ -105,7 +98,7 @@ test_that(getTestName("ADVAN1 TRANS2"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN2 TRANS1"), {
+test_that("ADVAN2 TRANS1 can be successfully imported", {
   advan <- 2
   trans <- 1
 
@@ -123,7 +116,7 @@ test_that(getTestName("ADVAN2 TRANS1"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN2 TRANS2"), {
+test_that("ADVAN2 TRANS2 can be successfully imported", {
   advan <- 2
   trans <- 2
 
@@ -141,7 +134,7 @@ test_that(getTestName("ADVAN2 TRANS2"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN3 TRANS1"), {
+test_that("ADVAN3 TRANS1 can be successfully imported", {
   advan <- 3
   trans <- 1
 
@@ -159,7 +152,7 @@ test_that(getTestName("ADVAN3 TRANS1"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN3 TRANS3"), {
+test_that("ADVAN3 TRANS3 can be successfully imported", {
   advan <- 3
   trans <- 3
 
@@ -177,7 +170,7 @@ test_that(getTestName("ADVAN3 TRANS3"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN3 TRANS4"), {
+test_that("ADVAN3 TRANS4 can be successfully imported", {
   advan <- 3
   trans <- 4
 
@@ -195,7 +188,7 @@ test_that(getTestName("ADVAN3 TRANS4"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN3 TRANS5"), {
+test_that("ADVAN3 TRANS5 can be successfully imported", {
   advan <- 3
   trans <- 5
 
@@ -213,7 +206,7 @@ test_that(getTestName("ADVAN3 TRANS5"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN4 TRANS1"), {
+test_that("ADVAN4 TRANS1 can be successfully imported", {
   advan <- 4
   trans <- 1
 
@@ -231,7 +224,7 @@ test_that(getTestName("ADVAN4 TRANS1"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN4 TRANS3"), {
+test_that("ADVAN4 TRANS3 can be successfully imported", {
   advan <- 4
   trans <- 3
 
@@ -249,7 +242,7 @@ test_that(getTestName("ADVAN4 TRANS3"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN4 TRANS4"), {
+test_that("ADVAN4 TRANS4 can be successfully imported", {
   advan <- 4
   trans <- 4
 
@@ -267,7 +260,7 @@ test_that(getTestName("ADVAN4 TRANS4"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN4 TRANS5"), {
+test_that("ADVAN4 TRANS5 can be successfully imported", {
   advan <- 4
   trans <- 5
 
@@ -285,7 +278,7 @@ test_that(getTestName("ADVAN4 TRANS5"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN11 TRANS4"), {
+test_that("ADVAN11 TRANS4 can be successfully imported", {
   advan <- 11
   trans <- 4
 
@@ -303,7 +296,7 @@ test_that(getTestName("ADVAN11 TRANS4"), {
   expect_equal(model2, read.campsis(nonRegressionNonmem2rxPath(advan, trans)))
 })
 
-test_that(getTestName("ADVAN12 TRANS4"), {
+test_that("ADVAN12 TRANS4 can be successfully imported", {
   advan <- 12
   trans <- 4
 

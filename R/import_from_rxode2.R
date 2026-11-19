@@ -751,12 +751,14 @@ getSubroutineModelForRxode2 <- function(advan, trans) {
     trans
   )]]
 
-  # if (advan==12 && trans==4) {
-  #   return(NULL)
-  # }
-
-  if (is.null(model)) {
-    return(NULL)
+  if (advan==12 && trans==4) {
+    # Hardcoded parameters in nonmem2rx: Vc, Vp1, Vp2, q1, Q2
+    model <- model %>%
+      replace_all("V2", "Vc") %>%
+      replace_all("V3", "Vp1") %>%
+      replace_all("V4", "Vp2") %>%
+      replace_all("Q3", "q1") %>% # Strange to see q1 and not Q1
+      replace_all("Q4", "Q2")
   }
 
   return(model)
