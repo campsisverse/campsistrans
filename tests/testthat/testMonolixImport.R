@@ -463,3 +463,37 @@ test_that("Warfarin PKPD IRM can be imported successfully", {
     tolerance = 0.005
   )
 })
+
+test_that("One-line SEX covariate effect works in both rxode2 and mrgsolve", {
+  beta_sex <- -0.4
+  theta_vc <- 10
+
+  model <- model_suite$pk$`1cpt_zo` %>%
+    replace(Theta(name = "VC", value = theta_vc)) %>%
+    add(Theta(name = "BETA_VC_SEX", value = beta_sex)) %>%
+    replace(Equation(
+      "VC",
+      "THETA_VC * exp(THETA_BETA_VC_SEX * (SEX == 1) + ETA_VC)"
+    )) %>%
+    disable("IIV")
+
+  ds <- Dataset(subjects = 2) %>%
+    add(Infusion(time = 0, amount = 100, compartment = 1)) %>%
+    add(Observations(seq(0, 24, 0.1))) %>%
+    add(Covariate("SEX", c(0, 1)))
+
+  res_rxode2 <- simulate(model = model, dataset = ds, dest = "rxode2", outvars = c("VC", "SEX"))
+  res_mrgsolve <- simulate(model = model, dataset = ds, dest = "mrgsolve", outvars = c("VC", "SEX"))
+
+  # Check outputs are same
+  expect_equal(res_rxode2$VC, res_mrgsolve$VC, tolerance = 1e-6)
+  spaghetti_plot(res_rxode2)
+  spaghetti_plot(res_mrgsolve)
+
+  # Check VC value is correct
+  vc_sex0 <- res_rxode2$VC[res_rxode2$SEX == 0][1]
+  vc_sex1 <- res_rxode2$VC[res_rxode2$SEX == 1][1]
+
+  expect_equal(vc_sex0, theta_vc, tolerance = 1e-6)
+  expect_equal(vc_sex1 / vc_sex0, exp(beta_sex), tolerance = 1e-6)
+})

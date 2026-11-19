@@ -87,76 +87,94 @@ exportClasses(extended_if_statement)
 exportClasses(rxode2_error_model)
 importFrom(assertthat,assert_that)
 importFrom(callr,r_bg)
-importFrom(campsismod,Equation)
-importFrom(campsismod,InitialCondition)
-importFrom(campsismod,OdeRecord)
-importFrom(campsismod,Omega)
-importFrom(campsismod,Parameters)
-importFrom(campsismod,Sigma)
-importFrom(campsismod,Theta)
-importFrom(campsismod,VariablePattern)
-importFrom(campsismod,add)
-importFrom(campsismod,auto_detect_nonmem)
-importFrom(campsismod,delete)
-importFrom(campsismod,find)
-importFrom(campsismod,get_by_index)
-importFrom(campsismod,get_name_in_model)
-importFrom(campsismod,get_nonmem_name)
-importFrom(campsismod,is_diag)
-importFrom(campsismod,is_rxode)
-importFrom(campsismod,process_extra_arg)
-importFrom(campsismod,replace)
-importFrom(campsismod,replace_all)
-importFrom(campsismod,sort)
-importFrom(campsismod,standardise)
-importFrom(campsismod,to_string)
-importFrom(campsismod,update_compartments)
+importFrom(campsismod,
+  Equation,
+  InitialCondition,
+  OdeRecord,
+  Omega,
+  Parameters,
+  Sigma,
+  Theta,
+  VariablePattern,
+  add,
+  auto_detect_nonmem,
+  delete,
+  find,
+  get_by_index,
+  get_name_in_model,
+  get_nonmem_name,
+  is_diag,
+  is_rxode,
+  process_extra_arg,
+  replace,
+  replace_all,
+  sort,
+  standardise,
+  to_string,
+  update_compartments
+)
 importFrom(config,get)
 importFrom(digest,sha1)
-importFrom(dplyr,all_of)
-importFrom(dplyr,arrange)
-importFrom(dplyr,filter)
-importFrom(dplyr,filter_at)
-importFrom(dplyr,group_by)
-importFrom(dplyr,group_by_at)
-importFrom(dplyr,group_indices)
-importFrom(dplyr,group_split)
-importFrom(dplyr,left_join)
-importFrom(dplyr,mutate)
-importFrom(dplyr,mutate_at)
-importFrom(dplyr,pull)
-importFrom(dplyr,relocate)
-importFrom(dplyr,rename)
-importFrom(dplyr,rename_at)
-importFrom(dplyr,row_number)
-importFrom(dplyr,select)
-importFrom(dplyr,select_at)
-importFrom(dplyr,ungroup)
-importFrom(magrittr,`%>%`)
-importFrom(methods,is)
-importFrom(methods,new)
-importFrom(methods,show)
-importFrom(methods,validObject)
-importFrom(monolix2rx,mlxtran)
-importFrom(monolix2rx,monolix2rx)
+importFrom(dplyr,
+  all_of,
+  arrange,
+  filter,
+  filter_at,
+  group_by,
+  group_by_at,
+  group_indices,
+  group_split,
+  left_join,
+  mutate,
+  mutate_at,
+  pull,
+  relocate,
+  rename,
+  rename_at,
+  row_number,
+  select,
+  select_at,
+  ungroup
+)
+importFrom(magrittr,"%>%")
+importFrom(methods,
+  is,
+  new,
+  show,
+  validObject
+)
+importFrom(monolix2rx,
+  mlxtran,
+  monolix2rx
+)
 importFrom(nonmem2rx,nonmem2rx)
-importFrom(purrr,detect)
-importFrom(purrr,keep)
-importFrom(purrr,map)
-importFrom(purrr,map2)
-importFrom(purrr,map_chr)
-importFrom(purrr,map_df)
-importFrom(reticulate,dict)
-importFrom(reticulate,import)
-importFrom(reticulate,iterate)
-importFrom(reticulate,py_capture_output)
-importFrom(reticulate,use_virtualenv)
-importFrom(reticulate,virtualenv_create)
-importFrom(reticulate,virtualenv_install)
-importFrom(rly,lex)
-importFrom(rly,yacc)
-importFrom(tibble,add_column)
-importFrom(tibble,as_tibble)
-importFrom(tibble,tibble)
-importFrom(utils,read.csv)
-importFrom(utils,write.csv)
+importFrom(purrr,
+  detect,
+  keep,
+  map,
+  map2,
+  map_chr,
+  map_df
+)
+importFrom(reticulate,
+  dict,
+  import,
+  iterate,
+  py_capture_output,
+  use_virtualenv,
+  virtualenv_create,
+  virtualenv_install
+)
+importFrom(rly,
+  lex,
+  yacc
+)
+importFrom(tibble,
+  add_column,
+  as_tibble,
+  tibble
+)
+importFrom(utils,
+  read.csv,
+  write.csv
+)
